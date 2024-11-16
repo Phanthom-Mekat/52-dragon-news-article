@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+    const {user}= useContext(AuthContext);
     return (
         <>
             <section>
                 <div className="flex justify-between  items-center gap-10">
-                    <div></div>
+                    <div>{ user && user.email }</div>
                     <div className="flex  items-center gap-5 text-gray-600">
                         <Link to="/">Home</Link>
                         <Link to="/about" >About</Link>
