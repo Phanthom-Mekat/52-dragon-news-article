@@ -3,7 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
 
 const Navbar = () => {
-    const {user}= useContext(AuthContext);
+    const {user, logOut}= useContext(AuthContext);
     return (
         <>
             <section>
@@ -16,7 +16,9 @@ const Navbar = () => {
                     </div>
                     <div className="flex   items-center gap-2">
                         <img src="/user.png" alt="" />
-                        <Link to="auth/login" className="btn btn-neutral">Login</Link>
+                        {
+                            user ?  <button onClick={logOut} className="btn btn-neutral">Logout</button> :<Link to="auth/login" className="btn btn-neutral">Login</Link>
+                        }
                     </div>
                 </div>
             </section>

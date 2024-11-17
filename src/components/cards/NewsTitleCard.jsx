@@ -1,6 +1,7 @@
 import { FaEye, FaStar, FaShareAlt } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const NewsTitleCard = ({ news }) => {
     const {
@@ -43,9 +44,9 @@ const NewsTitleCard = ({ news }) => {
                 <p className="text-gray-500 text-sm mt-2 line-clamp-3">
                     {details}
                 </p>
-                <button className="text-red-500 font-medium text-sm mt-2">
+                <Link to={`/news/${news._id}`} className="text-red-500 font-medium text-sm mt-2">
                     Read More
-                </button>
+                </Link>
             </div>
 
             {/* Footer */}
